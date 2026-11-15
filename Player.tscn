@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://3pg2ge584a1s"]
+
+[ext_resource type="Texture2D" uid="uid://btkmhf3pg1keg" path="res://test.png" id="1_b5e5s"]
+[ext_resource type="Script" uid="uid://0xw21gh4p10e" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://bcdehqd6vn0af" path="res://ded.png" id="2_e80uo"]
+[ext_resource type="Texture2D" uid="uid://bkpnbcd32y7c6" path="res://test2.png" id="3_kne1u"]
+[ext_resource type="Texture2D" uid="uid://bpcmbi6tisoov" path="res://waaah.png" id="5_cxr5p"]
+[ext_resource type="Texture2D" uid="uid://clyaam108x8a3" path="res://noice.png" id="6_tdg3f"]
+[ext_resource type="AudioStream" uid="uid://dfivknetq0uoo" path="res://tuco-get-out.mp3" id="7_dtqjt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u0exl"]
+radius = 16.0
+height = 56.0
+
+[node name="Player" type="CharacterBody2D" unique_id=505762642 groups=["player"]]
+script = ExtResource("1_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=334242604 groups=["player"]]
+visible = false
+shape = SubResource("CapsuleShape2D_u0exl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1576110582]
+visible = false
+texture = ExtResource("2_e80uo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328595878]
+visible = false
+position = Vector2(-4.74, -1.51)
+texture = ExtResource("1_b5e5s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1715583305]
+position = Vector2(-4.735, 0)
+texture = ExtResource("3_kne1u")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1645731026]
+visible = false
+texture = ExtResource("5_cxr5p")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=730367998]
+visible = false
+position = Vector2(0, -9)
+texture = ExtResource("6_tdg3f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=597722825]
+stream = ExtResource("7_dtqjt")

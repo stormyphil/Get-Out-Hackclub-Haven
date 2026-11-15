@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dikalkvnmermi"]
+
+[ext_resource type="Script" uid="uid://jk015gr7ycxs" path="res://shroom.gd" id="1_cgs0o"]
+[ext_resource type="Texture2D" uid="uid://bqnb8r6ms1vyb" path="res://schrom.png" id="1_dcuk0"]
+[ext_resource type="Texture2D" uid="uid://bn78cr2e6xo8o" path="res://schrom pflach.png" id="2_cgs0o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nol3n"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0exl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cgs0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dcuk0")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Area2D" type="Area2D" unique_id=1634968237]
+script = ExtResource("1_cgs0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1498180017]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_nol3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=490394925]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_u0exl")
+frame = 1
+frame_progress = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
