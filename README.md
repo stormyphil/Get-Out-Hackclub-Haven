@@ -1,5 +1,4 @@
-# bums
-Get Out!
+# Get Out!
 
 Time spent: Approximately 15 hours of casual development
 
